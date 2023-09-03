@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Route, Routes } from "react-router";
+import PostPage from "./Pages/article/ArticlePage.tsx";
+import BlogPage from "./Pages/blog/BlogPage.tsx";
 import { generateRatings } from "./features/posts/likesDislikesSlice.ts";
-import PostPage from "./pages/article/ArticlePage.tsx";
-import BlogPage from "./pages/blog/BlogPage.tsx";
 import { useGetAllPostsQuery } from "./services/jsonplaceholder.ts";
 import { useAppDispatch } from "./store/hooks.ts";
 
