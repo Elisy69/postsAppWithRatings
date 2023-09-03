@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { getRatings } from "../../helpers/getRatings";
 
-interface PostRating {
+export interface PostRating {
   id: number;
   likes: number;
   dislikes: number;

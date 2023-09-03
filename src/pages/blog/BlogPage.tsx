@@ -9,8 +9,8 @@ function Blog() {
   const [searchedValue, setSearchedValue] = useState("");
   const { data } = useGetAllPostsQuery(searchedValue);
 
-  const handleChange = (e: string) => {
-    setSearchedValue(e);
+  const handleChange = (value: string) => {
+    setSearchedValue(value);
   };
 
   useEffect(() => {

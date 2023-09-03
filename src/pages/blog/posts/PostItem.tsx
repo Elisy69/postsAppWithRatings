@@ -1,4 +1,4 @@
-import ButtonReadMore from "../../../components/ButtonReadMore";
+import ButtonReadMore from "../../../components/buttons/ButtonReadMore";
 import RatingBar from "../../../components/RatingBar";
 import { Post } from "../../../services/jsonplaceholder";
 

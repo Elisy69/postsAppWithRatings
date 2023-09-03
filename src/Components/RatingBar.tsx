@@ -1,7 +1,6 @@
-import DislikeSvg from "../assets/svg/Dislikes";
-import LikeSvg from "../assets/svg/Like";
-
 import { useAppSelector } from "../store/hooks";
+import DislikeButton from "./buttons/DislikeButton";
+import LikeButton from "./buttons/LikeButton";
 
 interface RatingBarProps {
   id: number;
@@ -15,11 +14,13 @@ function RatingBar({ id }: RatingBarProps) {
   return (
     <div className="flex gap-4">
       <div className="flex gap-1">
-        <LikeSvg id={id} />
+        {rating ? <LikeButton rating={rating} /> : ""}
+
         {rating ? <div className="text-sm">{rating.likes}</div> : ""}
       </div>
       <div className="flex gap-1">
-        <DislikeSvg id={id} />
+        {rating ? <DislikeButton rating={rating} /> : ""}
+
         {rating ? <div className="text-sm">{rating.dislikes}</div> : ""}
       </div>
     </div>
