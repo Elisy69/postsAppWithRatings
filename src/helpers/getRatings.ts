@@ -1,7 +1,8 @@
+import { PostRating } from "../features/posts/likesDislikesSlice";
 import { getRandomLikesNumber } from "./getRandomLikesNumber";
 
 export function getRatings(postsCount: number) {
-  const ratings = [];
+  const ratings: PostRating[] = [];
   for (let i = 0; i < postsCount; i++) {
     ratings.push({
       id: i + 1,

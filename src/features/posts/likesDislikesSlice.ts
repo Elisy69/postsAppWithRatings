@@ -17,8 +17,8 @@ export const ratingsSlice = createSlice({
   name: "ratings",
   initialState,
   reducers: {
-    generateRatings: (state, action: PayloadAction<number>) => {
-      state = getRatings(action.payload);
+    generateRatings: (_, action: PayloadAction<number>) => {
+      return getRatings(action.payload);
     },
     toggleLike: (state, action) => {
       const post = state.find((post) => post.id === action.payload);
