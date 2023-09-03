@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import ratingsReducer from "../features/posts/likesDislikesSlice";
-import { jsonplaceholderApi } from "/Users/strashevskyelisey/Desktop/coding/TestTasks/JSONplaceholderStandardTask/src/services/jsonplaceholder.ts";
+import { jsonplaceholderApi } from "../services/jsonplaceholder";
 
 export const store = configureStore({
   reducer: {
