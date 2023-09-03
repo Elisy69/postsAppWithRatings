@@ -6,8 +6,11 @@ interface ButtonReadMoreProps {
 
 function ButtonReadMore({ postId }: ButtonReadMoreProps) {
   return (
-    <Link to={`/${postId}`}>
-      <button>Читать далее</button>
+    <Link
+      to={`/${postId}`}
+      className="hover:bg-gray-200 border-2 border-black text-sm px-2 py-1 rounded-full self-end m-4"
+    >
+      Читать далее
     </Link>
   );
 }

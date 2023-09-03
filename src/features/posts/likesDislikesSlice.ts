@@ -1,13 +1,15 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { getRatings } from "../../helpers/generateRatings";
+import { getRatings } from "../../helpers/getRatings";
 
-interface PostRatings {
+interface PostRating {
   id: number;
   likes: number;
   dislikes: number;
+  isLiked: boolean;
+  isDisliked: boolean;
 }
 
-type RatingsSlice = PostRatings[];
+type RatingsSlice = PostRating[];
 
 const initialState: RatingsSlice = [];
 
@@ -18,16 +20,23 @@ export const ratingsSlice = createSlice({
     generateRatings: (state, action: PayloadAction<number>) => {
       return getRatings(action.payload);
     },
-    like: (state, action) => {
-      const postIndex = state.findIndex((post) => post.id === action.payload);
-      state[postIndex].likes++;
+    toggleLike: (state, action) => {
+      const post = state.find((post) => post.id === action.payload);
+      if (post) {
+        post.isLiked ? post.likes-- : post.likes++;
+        post.isLiked = !post.isLiked;
+      }
     },
-    dislike: (state, action) => {
-      const postIndex = state.findIndex((post) => post.id === action.payload);
-      state[postIndex].dislikes++;
+    toggleDislike: (state, action) => {
+      const post = state.find((post) => post.id === action.payload);
+      if (post) {
+        post.isDisliked ? post.dislikes-- : post.dislikes++;
+        post.isDisliked = !post.isDisliked;
+      }
     },
   },
 });
 
-export const { generateRatings, like, dislike } = ratingsSlice.actions;
+export const { generateRatings, toggleLike, toggleDislike } =
+  ratingsSlice.actions;
 export default ratingsSlice.reducer;

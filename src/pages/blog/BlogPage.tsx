@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { useGetAllPostsQuery } from "../services/jsonplaceholder.ts";
-
-import Header from "../Components/Header.tsx";
-import Loading from "../Components/Loading";
-import PostsList from "../Components/PostsList";
-import Searchbar from "../Components/Searchbar";
+import Header from "../../components/Header.tsx";
+import Loading from "../../components/Loading.tsx";
+import Searchbar from "../../components/Searchbar.tsx";
+import { useGetAllPostsQuery } from "../../services/jsonplaceholder.ts";
+import PostsList from "./posts/PostsList.tsx";
 
 function Blog() {
   const [searchedValue, setSearchedValue] = useState("");

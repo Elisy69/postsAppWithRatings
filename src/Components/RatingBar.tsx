@@ -1,5 +1,5 @@
-import DislikeSvg from "../assets/svgs/Dislikes";
-import LikeSvg from "../assets/svgs/Like";
+import DislikeSvg from "../assets/svg/Dislikes";
+import LikeSvg from "../assets/svg/Like";
 
 import { useAppSelector } from "../store/hooks";
 
@@ -13,14 +13,14 @@ function RatingBar({ id }: RatingBarProps) {
   );
 
   return (
-    <div className="flex">
-      <div className="flex">
+    <div className="flex gap-4">
+      <div className="flex gap-1">
         <LikeSvg id={id} />
-        {rating ? <div>{rating.likes}</div> : ""}
+        {rating ? <div className="text-sm">{rating.likes}</div> : ""}
       </div>
-      <div className="flex">
+      <div className="flex gap-1">
         <DislikeSvg id={id} />
-        {rating ? <div>{rating.dislikes}</div> : ""}
+        {rating ? <div className="text-sm">{rating.dislikes}</div> : ""}
       </div>
     </div>
   );

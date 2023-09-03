@@ -7,6 +7,8 @@ export function getRatings(postsCount: number) {
       id: i + 1,
       likes: getRandomLikesNumber(),
       dislikes: getRandomLikesNumber(),
+      isLiked: false,
+      isDisliked: false,
     });
   }
   return ratings;
